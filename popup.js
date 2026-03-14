@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     status.textContent = 'Envoi au serveur...';
 
     try {
-      const response = await fetch('https://yt.hosten.uk/api/download-yt', {
+      const response = await fetch('URL server or IP:PORT/api/download-yt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           url: tab.url,
           format: format,          
-          secret: 'EZDZUuhezdz6545z4dzz6d4zZefr'   
+          secret: 'Secret key used for encryption or session authentication'   
         })
       });
 
