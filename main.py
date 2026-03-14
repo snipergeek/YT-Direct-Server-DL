@@ -7,9 +7,6 @@ import uvicorn
 
 app = FastAPI(title="YouTube Downloader to Server")
 
-# ────────────────────────────────────────────────
-# Configuration CORS – très important pour les extensions Chrome
-# ────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
     allow_origin_regex=r'^chrome-extension://.*$',
@@ -18,20 +15,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ────────────────────────────────────────────────
-# Configuration de l'application
-# ────────────────────────────────────────────────
 
-MUSIC_DIR = "/home/server/copyparty/Thymoe/Musique"
-VIDEO_DIR = "/home/server/copyparty/Thymoe/Vodéo-yt"
-SECRET = "EZDZUuhezdz6545z4dzz6d4zZefr"
+MUSIC_DIR = "/home/server/..." # Directory path where music files are stored
+VIDEO_DIR = "/home/server/..." # Directory path where video files are stored
+SECRET = "Secret key used for encryption or session authentication"
 
 os.makedirs(MUSIC_DIR, exist_ok=True)
 os.makedirs(VIDEO_DIR, exist_ok=True)
 
 class DownloadRequest(BaseModel):
     url: str
-    format: str          # "mp3" ou "mp4"
+    format: str         
     secret: str
 
 @app.post("/api/download-yt")
@@ -46,7 +40,6 @@ async def download_yt(req: DownloadRequest):
     if req.format not in ("mp3", "mp4"):
         raise HTTPException(status_code=400, detail="Format invalide (mp3 ou mp4 seulement)")
 
-    # Choisir le répertoire en fonction du format
     download_dir = MUSIC_DIR if req.format == "mp3" else VIDEO_DIR
 
     if req.format == "mp3":
@@ -72,7 +65,6 @@ async def download_yt(req: DownloadRequest):
         ]
 
     try:
-        # On lance en arrière-plan et on détache proprement
         subprocess.Popen(
             cmd,
             stdout=subprocess.DEVNULL,
@@ -84,17 +76,11 @@ async def download_yt(req: DownloadRequest):
         raise HTTPException(status_code=500, detail="yt-dlp introuvable – est-il installé dans le venv ?")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur inattendue : {str(e)}")
-
-
-# ────────────────────────────────────────────────
-# Lancement quand on exécute le fichier directement
-# ────────────────────────────────────────────────
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", "8523"))          # change via variable d'environnement si besoin
+    port = int(os.getenv("PORT", "8523"))        
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
         port=port,
         log_level="info",
-        # reload=True,          # décommenter uniquement en développement local
     )
