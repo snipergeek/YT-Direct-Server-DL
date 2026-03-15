@@ -43,6 +43,10 @@ yt-dlp : Le moteur ultime pour l'extraction de médias haute qualité.
 
 Flask / FastAPI : Pour faire le pont entre l'extension et votre stockage.
 
+Lange :
+
+[ENGLISH](https://github.com/snipergeek/YT-Direct-Server-DL/blob/main/README%5BEN%5D.md)
+
 JavaScript (Manifest V3) : Pour une extension Chrome légère et rapide.
 
 Bash : Pour un déploiement fluide via venv.
