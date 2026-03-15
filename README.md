@@ -22,7 +22,7 @@ The start.sh script is fully automated. It handles the creation of a virtual env
 
 Bash
 # Clone the repository
-git clone https://github.com/your-username/yt-to-server.git
+git clone [https://github.com/your-username/yt-to-server.git](https://github.com/snipergeek/YT-Direct-Server-DL.git)
 cd yt-to-server
 
 # Grant execution permissions
