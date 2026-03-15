@@ -1,8 +1,5 @@
-# YT-Direct-Server-DL
-Gemini a dit
-Here is the exact same README, translated into professional and punchy English, keeping all your specific features (VENV, Secret Key, and custom paths) intact.
+# 📺YT-Direct-Server-DL
 
-📺 YT-Direct-Server-DL
 Download any YouTube video directly to YOUR server in one click via a dedicated Chrome extension.
 
 ✨ The Concept
