@@ -51,3 +51,7 @@ Bash: For seamless deployment via venv.
 [!WARNING]
 
 Legal Note: This project is intended for personal use only. Please respect the copyrights and terms of service of the content creators and platforms.
+
+Lange :
+[FRENCH](https://github.com/snipergeek/YT-Direct-Server-DL/edit/main/README[FR].md)
+
