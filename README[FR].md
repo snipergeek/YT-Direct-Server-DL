@@ -53,4 +53,4 @@ Note Légale : Ce projet est destiné à un usage personnel uniquement. Veuillez
 
 Lange :
 
-[ENGLISH](https://github.com/snipergeek/YT-Direct-Server-DL/blob/main/README%5BEN%5D.md)
+[ENGLISH](https://github.com/snipergeek/YT-Direct-Server-DL/blob/main/README.md)
