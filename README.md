@@ -40,20 +40,6 @@ Click Load unpacked and select the extension folder from this project.
 
 Important: Don't forget to configure your server's IP address and your SECRET_KEY in the extension files.
 
-📂 Project Structure
-Plaintext
-.
-├── extension/
-│   ├── manifest.json
-│   ├── popup.js       <-- Set Server URL and SECRET_KEY here
-│   └── content.js     <-- YouTube button injection logic
-├── backend/
-│   ├── main.py        <-- Set custom PATHS and SECRET_KEY here
-│   ├── requirements.txt
-│   └── start.sh       <-- Auto VENV management & launch script
-└── downloads/         <-- (Default) Your files land here
-    ├── mp3/
-    └── mp4/
 🛠️ Technologies Used
 Python 3: Server-side logic.
 
